@@ -6,9 +6,6 @@ import { Container } from "@/components/ui/container";
 import { GithubIcon } from "@/components/icons";
 import { SOCIAL_LINKS } from "@/lib/data";
 
-// TODO: replace with a real email address once available.
-const CONTACT_EMAIL_PLACEHOLDER = "your.email@example.com";
-
 export function Contact() {
   return (
     <section id="contact" className="relative py-28 sm:py-36">
@@ -40,7 +37,7 @@ export function Contact() {
 
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
               <a
-                href={`mailto:${CONTACT_EMAIL_PLACEHOLDER}`}
+                href={`mailto:${SOCIAL_LINKS.email}`}
                 className="group inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3 text-sm font-semibold text-obsidian transition-transform hover:-translate-y-0.5"
               >
                 Start a Conversation
@@ -62,12 +59,14 @@ export function Contact() {
               )}
             </div>
 
-            <p className="mt-6 text-xs text-text-muted">
-              Contact email is a placeholder — update{" "}
-              <code className="rounded bg-white/5 px-1.5 py-0.5">
-                CONTACT_EMAIL_PLACEHOLDER
-              </code>{" "}
-              in <code className="rounded bg-white/5 px-1.5 py-0.5">contact.tsx</code>.
+            <p className="mt-6 text-sm text-text-muted">
+              Or write directly to{" "}
+              <a
+                href={`mailto:${SOCIAL_LINKS.email}`}
+                className="text-gold-light transition-colors hover:text-gold"
+              >
+                {SOCIAL_LINKS.email}
+              </a>
             </p>
           </div>
         </motion.div>

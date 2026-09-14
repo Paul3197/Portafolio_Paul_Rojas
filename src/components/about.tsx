@@ -6,6 +6,7 @@ import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { GithubIcon, LinkedinIcon } from "@/components/icons";
 import { TECH_STACK, SOCIAL_LINKS } from "@/lib/data";
+import { TECH_ICONS, LUCIDE_TECH_ICONS } from "@/lib/tech-icons";
 
 export function About() {
   return (
@@ -90,19 +91,38 @@ export function About() {
               </p>
             </div>
 
-            <div className="mt-10 grid grid-cols-2 gap-x-8 gap-y-6 border-t border-border-subtle pt-8 sm:grid-cols-3">
+            <div className="mt-10 space-y-7 border-t border-border-subtle pt-8">
               {Object.entries(TECH_STACK).map(([category, items]) => (
                 <div key={category}>
                   <p className="text-[11px] uppercase tracking-[0.2em] text-gold-muted">
                     {category}
                   </p>
-                  <ul className="mt-2 space-y-1">
-                    {items.map((item) => (
-                      <li key={item} className="text-sm text-text-primary">
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="mt-3 flex flex-wrap gap-2.5">
+                    {items.map((item) => {
+                      const BrandIcon = TECH_ICONS[item];
+                      const LucideIcon = LUCIDE_TECH_ICONS[item];
+                      return (
+                        <span
+                          key={item}
+                          className="group flex items-center gap-2 rounded-full border border-border-subtle bg-graphite px-4 py-2 text-sm text-text-primary transition-colors hover:border-gold-muted/60 hover:bg-graphite-elevated"
+                        >
+                          {BrandIcon && (
+                            <BrandIcon
+                              size={15}
+                              className="text-gold-muted transition-colors group-hover:text-gold-light"
+                            />
+                          )}
+                          {LucideIcon && (
+                            <LucideIcon
+                              size={15}
+                              className="text-gold-muted transition-colors group-hover:text-gold-light"
+                            />
+                          )}
+                          {item}
+                        </span>
+                      );
+                    })}
+                  </div>
                 </div>
               ))}
             </div>

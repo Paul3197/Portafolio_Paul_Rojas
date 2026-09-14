@@ -58,6 +58,7 @@ export const PROJECTS: Project[] = [
 export type Capability = {
   title: string;
   description: string;
+  icon: "erp" | "financial" | "fullstack" | "backend" | "database" | "improvements";
 };
 
 export const CAPABILITIES: Capability[] = [
@@ -65,29 +66,35 @@ export const CAPABILITIES: Capability[] = [
     title: "ERP & Business Management Systems",
     description:
       "Business workflows, operational modules, process automation, and enterprise application development.",
+    icon: "erp",
   },
   {
     title: "Financial Software",
     description:
       "Platforms that centralize financial information and support structured business operations.",
+    icon: "financial",
   },
   {
     title: "Full-Stack Web Applications",
     description:
       "Modern React and Angular frontends connected to robust backend services.",
+    icon: "fullstack",
   },
   {
     title: "Backend & API Engineering",
     description:
       ".NET, C#, REST APIs, business logic, integrations, and maintainable service design.",
+    icon: "backend",
   },
   {
     title: "Database & Data Modeling",
     description:
       "PostgreSQL, SQL, relational data modeling, queries, and business-oriented data structures.",
+    icon: "database",
   },
   {
     title: "Existing Application Improvements",
+    icon: "improvements",
     description:
       "Refactoring, bug fixing, new features, integrations, and improvements to existing codebases.",
   },
@@ -143,5 +150,5 @@ export const TECH_STACK = {
 export const SOCIAL_LINKS = {
   github: "https://github.com/Paul3197",
   linkedin: "https://www.linkedin.com/in/paulrojas-dev/",
-  email: "",
+  email: "paulrjas31@gmail.com",
 };
